@@ -1,3 +1,16 @@
+function proxyImage(url) {
+  if (!url) return ''
+
+  // 已经处理过
+  if (url.includes('images.weserv.nl')) return url
+
+  // 只处理豆瓣图片
+  if (url.includes('doubanio.com')) {
+    return `https://images.weserv.nl/?url=${url.replace(/^https?:\/\//, '')}`
+  }
+
+  return url
+}
 // 全局变量
 let selectedAPIs = JSON.parse(localStorage.getItem('selectedAPIs') || '["tyyszy","dyttzy", "bfzy", "ruyi"]'); // 默认选中资源
 let customAPIs = JSON.parse(localStorage.getItem('customAPIs') || '[]'); // 存储自定义API列表
