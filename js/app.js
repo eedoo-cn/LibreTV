@@ -1369,5 +1369,6 @@ function saveStringAsFile(content, fileName) {
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
 }
+    console.log(item)
 
 // 移除Node.js的require语句，因为这是在浏览器环境中运行的
